@@ -1,0 +1,12 @@
+<div class="weui-tabbar">
+    <a v-for="(t, index) in footerModel.tabbar" @click="toggle(index)" href="javascript:;"
+        :class="['weui-tabbar__item', {'weui-bar__item_on' : footerModel.offset===index}]">
+        <span style="display: inline-block;position: relative;">
+            <img :src="iconTabbar" alt="" class="weui-tabbar__icon">
+            <span v-if='t.badge' class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+            <span v-if='t.dot' class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+        </span>
+        <p v-text="t.title" class="weui-tabbar__label"></p>
+    </a>
+
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cp1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./vue.js"></script>
+    <script>
+        const Header = Vue.extend({
+            //el不可用
+            //data 必须是一个函数,return一个对象
+            //浅拷贝指针,指向,每一个组件不能指向不同的数据源
+            //用函数,在每次复用的时候,重新创建一份新的数据源
+            data() {
+                return {
+                    name: '函数data()'
+                }
+            },
+            template: `<div>
+            组件1
+            <p>{{name}}</p>
+            </div>`
+        })
+        //注册使用 名字为Header
+        // Vue.component('eno', Header)
+        //注册一个组件
+        new Vue({
+            el: "#app",
+            data: {
+                name: "测试"
+            },
+            template: `
+            <div class="cp1">
+               <Yao-yao-le style="color:red" />
+               <Yao-yao-le></Yao-yao-le>
+            </div>
+            `,
+            components: {
+                // 局部注册  建议组件的名字首字母大写 xxx-xxx
+                'Yao-yao-le': Header
+            }
+        })
+
+    </script>
+</body>
+
+</html>

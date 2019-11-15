@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script src="./vue.js"></script>
+    <script>
+        // v-pre  的用出就是在模板中跳过vue的编译,直接输出原始值
+        new Vue({
+            el: '#demo',
+            data: {
+                name: `{{name}}`
+            },
+            template: `
+                <div>
+                    <p v-pre>{{name}}</p>
+                    <p>{{name}}</p>
+                </div>
+            `
+        })
+    </script>
+</body>
+
+</html>

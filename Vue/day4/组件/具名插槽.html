@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            line-height: 50px;
+            height: 50px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./vue.js"></script>
+    <script>
+        const Header = Vue.extend({
+            props: ['jjjjjj'],
+            data() {
+                return {
+                    title: "微信"
+                }
+            },
+            template: `<header :style="{backgroundColor:jjjjjj}">
+                    <slot name="header"/>
+                    <span>&&</span>
+                    <slot name="footer"/>
+                    </header>`
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                name: "微信"
+            },
+            template: `
+            <div>
+                <Header jjjjjj="green">
+                <template v-slot:header>
+                微信
+                </template>
+                <template v-slot:footer>
+                支付宝
+                </template>
+                </Header>
+            </div> `,
+            components: {
+                Header
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

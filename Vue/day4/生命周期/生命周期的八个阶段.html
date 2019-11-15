@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="destroy">销毁</button>
+        {{name}}
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'lf'
+        },
+        //创建前   没有M煤油V(虚拟DOM和真是DOM)
+        beforeCreate() {
+            console.log('创建前');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+
+        },
+        //创建后  修改数据一般发生在created里面  ajax在这里触发,因为这里是最早拿到数据
+        created() {
+            console.log('创建后');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+            this.timer = window.setInterval(() => {
+                console.log(1);
+
+            }, 1000)
+        },
+        //挂载前 读取了模板,但是还没更新上去,编译模板
+        beforeMount() {
+            console.log('挂载前');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+        },
+        //挂载后 V和M都更新完毕 V已经完全更新了,所以一般吧DOM的操作放在这里
+        mounted() {
+            console.log('挂载后');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+        },
+        //更新前
+        beforeUpdate() {
+            console.log('更新前');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+        },
+        //更新后
+        updated() {
+            console.log('更新后');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+        },
+        //销毁前
+        beforeDestroy() {
+            console.log('销毁前');
+            console.log('View', this.$el);
+            console.log('Model', this.$data);
+            window.clearInterval(this.timer)
+
+        },
+        //销毁后
+        destroyed() {
+            console.log('销毁后');
+            console.log('View', this.$el);
+            console.log('Model', this.$el);
+
+        },
+        methods: {
+            destroy() {
+                console.log(this.timer);
+                this.$destroy()
+
+            }
+        }
+    })
+</script>
+
+</html>

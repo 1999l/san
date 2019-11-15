@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="add">
+
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#add",
+        data: {
+            bool: 666
+        },
+        //v-if 接收一个布尔值 , 为真时显示 ,为假时隐藏
+        template: `<div>
+            <p v-if='0'>555</p>
+            <p v-if='false'>666</p>
+            <p v-if="bool">777</p>
+        </div>`
+
+    })
+</script>
+
+</html>
