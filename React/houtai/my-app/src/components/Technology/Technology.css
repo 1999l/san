@@ -1,0 +1,15 @@
+thead th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+tr:hover{
+    background-color: #f2f2f2;
+}
+tbody{
+    border: 1px solid #ddd;
+}
+tbody tr{
+    height: 34px;
+    width: 100%;
+    border: 1px solid #ddd;
+}

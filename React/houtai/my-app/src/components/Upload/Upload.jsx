@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Input, Button } from 'antd';
 // const { TextArea } = Input;
-export default class Complaint extends React.Component {
+export default class Upload extends React.Component {
     render() {
         return (
             <div style={{height:'100%',
@@ -14,25 +14,26 @@ export default class Complaint extends React.Component {
                 paddingLeft:'16px'}}>
                 <span style={{color:'#4c8f8d',paddingRight:'5px'}}>学员后台</span>
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
-                <span style={{color:'#555'}}>匿名投诉</span>
+                <span style={{color:'#555'}}>项目上传</span>
             </div>
-            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc'}}></div>
+            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc',fontSize:'22px'}}>学员项目上传</div>
+
+
             <div  style={{textAlign:'left',
             border:'1px solid #ccc',
             padding:'16px 12px',
             margin:'0 12px'}}>
-                <span style={{color:'red',
-                            width:'20%',
-                            display:'inline-block',
-                            textAlign:'right',
-                            verticalAlign: 'top'}}>
-                                投诉内容：</span>
-            <textarea placeholder="本投诉是匿名投诉，不会暴露您的信息"
-             style={{width: '60%',
-                height: '290px', 
-                margin: '0px' ,
-                verticalAlign: 'top'
-                }} ></textarea>
+               
+               <div style={{marginTop: '25px'}}>
+                                <label  style={{color:'red',width:'17%',textAlign:'right',display:'inline-block',paddingRight:'15px'}} > 项目文件： </label>
+                                <div style={{display:'inline-block'}}>
+                                    <div style={{float:'left',display:'inline-block'}}>
+                                        <input type="file" name="itemupload" id="file" />
+                                    </div>
+                                    <span style={{color:'red'}}><b>注：请上传格式为【zip,rar】的压缩包,上传大小不得超过10M！</b></span>
+                                                                    </div>
+
+                            </div>
                 <div style={{paddingTop:'15px',marginBottom:'15px'}}>
                     <div style={{marginLeft:'30%',
                 marginTop:'50px'}}>

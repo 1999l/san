@@ -1,7 +1,7 @@
 import React from 'react';
-import { Input, Button } from 'antd';
-const { TextArea } = Input;
-export default class Complaint extends React.Component {
+import './Technology.css'
+
+export default class Technology extends React.Component {
     render() {
         return (
             
@@ -21,16 +21,16 @@ export default class Complaint extends React.Component {
             <div  style={{textAlign:'left',
             border:'1px solid #ccc',
             padding:'16px 12px',
-            margin:'0 12px'}}>
+            margin:'0 12px 16px 12px'}}>
                 <span style={{color:'red',
                             width:'20%',
                             display:'inline-block',
                             textAlign:'right',
-                            verticalAlign: 'top'}}>
+                            verticalAlign: 'top',}}>
                             学员姓名：</span>
-           <input type="text" style={{border:'1px solid #939192',
+           <input type="text" value='xff' readOnly={true} style={{border:'1px solid #939192',
            backgroundColor:' #f5f5f5',
-           paddingLeft:'5px'}} />
+           paddingLeft:'5px' }} />
            <div style={{height:'15px'}}></div>
                 <span style={{color:'red',
                             width:'20%',
@@ -66,13 +66,17 @@ export default class Complaint extends React.Component {
                 </div>
             </div>
            
-            <table>
-            <thead><tr>
-            <th width="3%">姓名</th>
+            <table style={{padding: '8px',margin:'0 12px'}}>
+            <thead><tr style={{color: '#707070',
+    fontWeight: '0',
+    background: '#f2f2f2'}}>
+            <th width="3%" >姓名</th>
             <th width="20%">问题理由</th>
             <th width="8%">创建时间</th>
             <th width="8%">回复</th>
         </tr></thead>
+        <tbody><tr style={{border: '1px solid #ddd'}} ><td ></td><td ></td><td ></td><td ></td></tr>
+                    </tbody>
         </table>
             
             </div>

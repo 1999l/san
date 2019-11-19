@@ -10,6 +10,7 @@ import{
 import "./Alayout.css"
 import Complaint from "../components/Complaint/Complaint"
 import Technology from "../components/Technology/Technology"
+import Upload from "../components/Upload/Upload"
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -27,8 +28,6 @@ const { SubMenu } = Menu;
   render() {
     return (
       <Router>
-        <Switch>
-          <Route path="/home">
             <div style={{height:'7vh',
             lineHeight:'7vh',
             backgroundColor:'#001529',
@@ -49,9 +48,9 @@ const { SubMenu } = Menu;
                 </span>
               }
             >
-                <Menu.Item key="1"><Link to="/home/Complaint">匿名投诉</Link></Menu.Item>
-                <Menu.Item key="2"><Link to="/home/Technology">技术问题</Link></Menu.Item>
-              <Menu.Item key="3">项目上传</Menu.Item>
+                <Menu.Item key="1"><Link to="/Complaint">匿名投诉</Link></Menu.Item>
+                <Menu.Item key="2"><Link to="/Technology">技术问题</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/Upload">项目上传</Link></Menu.Item>
               <Menu.Item key="4">VIP</Menu.Item>
               <Menu.Item key="5">学员周报</Menu.Item>
               <Menu.Item key="6">我的资料</Menu.Item>
@@ -76,20 +75,20 @@ const { SubMenu } = Menu;
         </Sider>
         <Layout>
           <Switch>
-            <Route path="/home/Complaint" >
+            <Route path="/Complaint" >
               <Complaint />
             </Route>
-            <Route path="/home/Technology">
+            <Route path="/Technology">
               <Technology />
+            </Route>
+            <Route path="/Upload">
+              <Upload />
             </Route>
           </Switch>
           </Layout>
       </Layout>
      
-
-      </Route>
-    </Switch>
-    <Redirect to="/home" />
+    <Redirect to="/Complaint" />
     </Router>
     );
   }
