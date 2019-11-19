@@ -1,0 +1,11 @@
+.ant-layout-sider-children{
+    height: auto !important;
+}
+.ant-layout-sider-trigger{
+    position: relative !important;
+    top: 0 !important;
+
+}
+.ant-layout-sider{
+height: 93vh;
+}

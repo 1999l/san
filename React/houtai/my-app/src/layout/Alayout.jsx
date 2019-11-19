@@ -4,8 +4,12 @@ import{
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom"
+import "./Alayout.css"
+import Complaint from "../components/Complaint/Complaint"
+import Technology from "../components/Technology/Technology"
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -22,12 +26,14 @@ const { SubMenu } = Menu;
 
   render() {
     return (
-        <Router>
-          <div style={{height:'7vh',
-          lineHeight:'7vh',
-          backgroundColor:'#001529',
-          fontSize:'4vh',
-          color:'#fff'}}>
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <div style={{height:'7vh',
+            lineHeight:'7vh',
+            backgroundColor:'#001529',
+            fontSize:'4vh',
+            color:'#fff'}}>
             千峰教育</div>
       <Layout style={{ minHeight: '92vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
@@ -43,8 +49,8 @@ const { SubMenu } = Menu;
                 </span>
               }
             >
-                <Menu.Item key="1">匿名投诉</Menu.Item>
-                <Menu.Item key="2">技术问题</Menu.Item>
+                <Menu.Item key="1"><Link to="/home/Complaint">匿名投诉</Link></Menu.Item>
+                <Menu.Item key="2"><Link to="/home/Technology">技术问题</Link></Menu.Item>
               <Menu.Item key="3">项目上传</Menu.Item>
               <Menu.Item key="4">VIP</Menu.Item>
               <Menu.Item key="5">学员周报</Menu.Item>
@@ -59,29 +65,32 @@ const { SubMenu } = Menu;
               title={
                 <span>
                   <Icon type="team" />
-                  <span>Team</span>
+                  <span>学员考勤</span>
                 </span>
               }
             >
-              <Menu.Item key="11">Team 1</Menu.Item>
-              <Menu.Item key="12">Team 2</Menu.Item>
+              <Menu.Item key="11">学员请假</Menu.Item>
+              <Menu.Item key="12">学员违纪</Menu.Item>
             </SubMenu>
-            
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-        </Layout>
+          <Switch>
+            <Route path="/home/Complaint" >
+              <Complaint />
+            </Route>
+            <Route path="/home/Technology">
+              <Technology />
+            </Route>
+          </Switch>
+          </Layout>
       </Layout>
-      </Router>
+     
+
+      </Route>
+    </Switch>
+    <Redirect to="/home" />
+    </Router>
     );
   }
 }
