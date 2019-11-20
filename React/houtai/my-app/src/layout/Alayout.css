@@ -9,3 +9,7 @@
 .ant-layout-sider{
 height: 93vh;
 }
+.ant-menu-item{
+    height: 37px !important;
+    line-height: 37px !important;
+}

@@ -1,4 +1,4 @@
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import React from 'react';
 import{
   BrowserRouter as Router,
@@ -13,7 +13,9 @@ import Technology from "../components/Technology/Technology"
 import Upload from "../components/Upload/Upload"
 import Vip from "../components/Vip/Vip"
 import Weekly from "../components/Weekly/Weekly"
-const { Header, Content, Footer, Sider } = Layout;
+import Breach from "../components/Breach/Breach"
+import Material from "../components/Material/Material"
+const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 
@@ -55,7 +57,7 @@ const { SubMenu } = Menu;
               <Menu.Item key="3"><Link to="/Upload">项目上传</Link></Menu.Item>
               <Menu.Item key="4"><Link to="/Vip">VIP</Link></Menu.Item>
               <Menu.Item key="5"><Link to="/Weekly">学员周报</Link></Menu.Item>
-              <Menu.Item key="6"><Link to="/Vip">我的资料</Link></Menu.Item>
+              <Menu.Item key="6"><Link to="/Material">我的资料</Link></Menu.Item>
               <Menu.Item key="7"><Link to="/Vip">缴费明细</Link></Menu.Item>
               <Menu.Item key="8"><Link to="/Vip">参加考试</Link></Menu.Item>
               <Menu.Item key="9"><Link to="/Vip">学员评价</Link></Menu.Item>
@@ -71,7 +73,7 @@ const { SubMenu } = Menu;
               }
             >
               <Menu.Item key="11">学员请假</Menu.Item>
-              <Menu.Item key="12">学员违纪</Menu.Item>
+              <Menu.Item key="12"><Link to="/Breach">学员违纪</Link></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
@@ -92,11 +94,19 @@ const { SubMenu } = Menu;
             <Route path="/Weekly">
               <Weekly />
             </Route>
+            <Route path="/Material">
+              <Material />
+            </Route>
+            
+
+            <Route path="/Breach">
+              <Breach />
+            </Route>
           </Switch>
           </Layout>
       </Layout>
      
-    <Redirect to="/Complaint" />
+    <Redirect to="/Material" />
     </Router>
     );
   }

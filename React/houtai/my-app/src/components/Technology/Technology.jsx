@@ -17,7 +17,7 @@ export default class Technology extends React.Component {
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
                 <span style={{color:'#555'}}>技术问题</span>
             </div>
-            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc'}}></div>
+            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px dotted #ccc'}}></div>
             <div  style={{textAlign:'left',
             border:'1px solid #ccc',
             padding:'16px 12px',

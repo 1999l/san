@@ -16,7 +16,7 @@ export default class Upload extends React.Component {
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
                 <span style={{color:'#555'}}>项目上传</span>
             </div>
-            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc',fontSize:'22px'}}>学员项目上传</div>
+            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px dotted #ccc',fontSize:'22px'}}>学员项目上传</div>
 
 
             <div  style={{textAlign:'left',

@@ -17,7 +17,7 @@ export default class Weekly extends React.Component {
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
                 <span style={{color:'#555'}}>学员周报</span>
             </div>
-            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc'}}></div>
+            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px dotted #ccc'}}></div>
             <div  style={{textAlign:'left',
             border:'1px solid #ccc',
             padding:'16px 12px',
@@ -38,7 +38,7 @@ export default class Weekly extends React.Component {
                             textAlign:'right',
                             verticalAlign: 'top',}}>
                             周报标题：</span>
-           <input type="text" value='请填写周报标题' style={{border:'1px solid #939192', paddingLeft:'5px' }} />
+           <input type="text" placeholder='请填写周报标题' style={{border:'1px solid #939192', paddingLeft:'5px' }} />
            <div style={{height:'15px'}}></div>
                 <span style={{color:'red',
                             width:'20%',
