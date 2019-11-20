@@ -15,6 +15,7 @@
 }
 .right{
     width: 75%;
+    padding: 0 20px;
 }
 .touxiangkuang{
     border: 1px solid #CCC;
@@ -28,4 +29,46 @@
 .touxiangkuang img{
     width:100% ;
     height: 100%;
+}
+.right table{
+    width: 100%;
+    margin: 0 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.right  td:nth-child(1){
+    color: #336199;
+    background-color: #edf3f4;
+    width: 110px;
+    text-align: right;
+    padding-right: 10px;
+}
+.right  td:nth-child(2){
+    padding-left: 20px;
+    text-align: left;
+}
+.xiaoxi h5{
+    font-size: 15px;
+    text-align: left;
+    padding:10px 20px;
+    margin-bottom: 0;
+}
+.xiaoxi {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.table-bordered th{
+    border: 1px solid #ddd;
+    padding:8px;
+    font-size: 12px;
+    background-color: #edf3f4;
+    text-align: left;
+
+}
+.table-bordered  td{
+    border: 1px solid #ddd;
+    font-size: 12px;
+    padding:8px;
 }
