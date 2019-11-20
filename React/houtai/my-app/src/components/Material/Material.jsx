@@ -16,7 +16,7 @@ export default class Material extends React.Component {
                 paddingLeft:'16px'}}>
                 <span style={{color:'#4c8f8d',paddingRight:'5px'}}>学员后台</span>
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
-                <span style={{color:'#555'}}>技术问题</span>
+                <span style={{color:'#555'}}>后台首页</span>
             </div>
             <div style={{padding:'10px 10px 13px',margin:'0 10px 12px 10px',borderBottom:'1px dotted #ccc'}}>
             <button  className="xiu">修改</button>
@@ -28,7 +28,7 @@ export default class Material extends React.Component {
                        <img src={huaji} alt=""/>
                    </div>
                    <div className="mingzilan">
-                       <i></i>&nbsp;<span>刘依依&nbsp;&nbsp;(女)</span>
+                       <i></i>&nbsp;&nbsp;<span>刘依依&nbsp;&nbsp;(女)</span>
                    </div>
                </div>
                <div className="right">
