@@ -11,6 +11,8 @@ import "./Alayout.css"
 import Complaint from "../components/Complaint/Complaint"
 import Technology from "../components/Technology/Technology"
 import Upload from "../components/Upload/Upload"
+import Vip from "../components/Vip/Vip"
+import Weekly from "../components/Weekly/Weekly"
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -48,16 +50,16 @@ const { SubMenu } = Menu;
                 </span>
               }
             >
-                <Menu.Item key="1"><Link to="/Complaint">匿名投诉</Link></Menu.Item>
-                <Menu.Item key="2"><Link to="/Technology">技术问题</Link></Menu.Item>
+              <Menu.Item key="1"><Link to="/Complaint">匿名投诉</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/Technology">技术问题</Link></Menu.Item>
               <Menu.Item key="3"><Link to="/Upload">项目上传</Link></Menu.Item>
-              <Menu.Item key="4">VIP</Menu.Item>
-              <Menu.Item key="5">学员周报</Menu.Item>
-              <Menu.Item key="6">我的资料</Menu.Item>
-              <Menu.Item key="7">缴费明细</Menu.Item>
-              <Menu.Item key="8">参加考试</Menu.Item>
-              <Menu.Item key="9">学员评价</Menu.Item>
-              <Menu.Item key="10">教学测评</Menu.Item>
+              <Menu.Item key="4"><Link to="/Vip">VIP</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/Weekly">学员周报</Link></Menu.Item>
+              <Menu.Item key="6"><Link to="/Vip">我的资料</Link></Menu.Item>
+              <Menu.Item key="7"><Link to="/Vip">缴费明细</Link></Menu.Item>
+              <Menu.Item key="8"><Link to="/Vip">参加考试</Link></Menu.Item>
+              <Menu.Item key="9"><Link to="/Vip">学员评价</Link></Menu.Item>
+              <Menu.Item key="10"><Link to="/Vip">教学测评</Link></Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub2"
@@ -83,6 +85,12 @@ const { SubMenu } = Menu;
             </Route>
             <Route path="/Upload">
               <Upload />
+            </Route>
+            <Route path="/Vip">
+              <Vip />
+            </Route>
+            <Route path="/Weekly">
+              <Weekly />
             </Route>
           </Switch>
           </Layout>

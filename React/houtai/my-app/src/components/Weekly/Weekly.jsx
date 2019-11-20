@@ -1,7 +1,7 @@
 import React from 'react';
-import './Technology.css'
+import "./Weekly.css"
 
-export default class Technology extends React.Component {
+export default class Weekly extends React.Component {
     render() {
         return (
             
@@ -15,7 +15,7 @@ export default class Technology extends React.Component {
                 paddingLeft:'16px'}}>
                 <span style={{color:'#4c8f8d',paddingRight:'5px'}}>学员后台</span>
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
-                <span style={{color:'#555'}}>技术问题</span>
+                <span style={{color:'#555'}}>学员周报</span>
             </div>
             <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc'}}></div>
             <div  style={{textAlign:'left',
@@ -31,14 +31,22 @@ export default class Technology extends React.Component {
            <input type="text" value='xff' readOnly={true} style={{border:'1px solid #939192',
            backgroundColor:' #f5f5f5',
            paddingLeft:'5px' }} />
+            <div style={{height:'15px'}}></div>
+            <span style={{color:'red',
+                            width:'20%',
+                            display:'inline-block',
+                            textAlign:'right',
+                            verticalAlign: 'top',}}>
+                            周报标题：</span>
+           <input type="text" value='请填写周报标题' style={{border:'1px solid #939192', paddingLeft:'5px' }} />
            <div style={{height:'15px'}}></div>
                 <span style={{color:'red',
                             width:'20%',
                             display:'inline-block',
                             textAlign:'right',
                             verticalAlign: 'top'}}>
-                                问题内容：</span>
-            <textarea placeholder="请输入技术内容"
+                                周报内容：</span>
+            <textarea placeholder="请输入周报内容"
              style={{width: '60%',
                 height: '90px', 
                 margin: '0px' ,
@@ -70,12 +78,15 @@ export default class Technology extends React.Component {
             <thead><tr style={{color: '#707070',
     fontWeight: '0',
     background: '#f2f2f2'}}>
-            <th width="3%" >姓名</th>
-            <th width="20%">问题理由</th>
-            <th width="8%">创建时间</th>
-            <th width="8%">回复</th>
+            
+                        <th width="3%">姓名</th>
+                        <th width="4%">周报标题</th>
+                        <th width="20%">周报内容</th>
+                        <th width="3%">周报状态</th>
+                        <th width="4%">创建时间</th>
+                    
         </tr></thead>
-        <tbody><tr style={{border: '1px solid #ddd'}} ><td ></td><td ></td><td ></td><td ></td></tr>
+        <tbody><tr style={{border: '1px solid #ddd'}} ><td ></td><td ></td><td ></td><td ></td><td ></td></tr>
                     </tbody>
         </table>
             

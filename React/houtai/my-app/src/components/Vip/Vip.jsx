@@ -1,7 +1,6 @@
 import React from 'react';
-import './Technology.css'
 
-export default class Technology extends React.Component {
+export default class Vip extends React.Component {
     render() {
         return (
             
@@ -15,9 +14,13 @@ export default class Technology extends React.Component {
                 paddingLeft:'16px'}}>
                 <span style={{color:'#4c8f8d',paddingRight:'5px'}}>学员后台</span>
                 <span style={{color:'#ccc',paddingRight:'5px'}}>/</span>
-                <span style={{color:'#555'}}>技术问题</span>
+                <span style={{color:'#555'}}>VIP</span>
             </div>
-            <div style={{padding:'10px',marginBottom:'12px',borderBottom:'1px solid #ccc'}}></div>
+            <div style={{padding:'10px',
+                        marginBottom:'12px',
+                        borderBottom:'1px solid #ccc',
+                        fontSize:'15px',
+                        color:'#ff0000'}}>您还不是VIP学员，填写下面表单可以申请VIP学员！</div>
             <div  style={{textAlign:'left',
             border:'1px solid #ccc',
             padding:'16px 12px',
@@ -37,13 +40,13 @@ export default class Technology extends React.Component {
                             display:'inline-block',
                             textAlign:'right',
                             verticalAlign: 'top'}}>
-                                问题内容：</span>
-            <textarea placeholder="请输入技术内容"
+                                申请理由：</span>
+            <textarea placeholder="请输入申请理由"
              style={{width: '60%',
-                height: '90px', 
-                margin: '0px' ,
-                verticalAlign: 'top'
-                }} ></textarea>
+                    height: '90px', 
+                    margin: '0px' ,
+                    verticalAlign: 'top'
+                    }} ></textarea>
                 <div style={{paddingTop:'15px',marginBottom:'15px'}}>
                     <div style={{marginLeft:'30%',
                 marginTop:'50px'}}>
@@ -53,7 +56,7 @@ export default class Technology extends React.Component {
                         padding:'6px 12px',
                         color:'#fff',
                         border:'5px solid #6fb3e0'
-                    }}>提问</button>
+                    }}>申请</button>
                     <button style={{
                         backgroundColor:'#abbac3',
                         fontSize:'14px',
@@ -66,19 +69,6 @@ export default class Technology extends React.Component {
                 </div>
             </div>
            
-            <table style={{padding: '8px',margin:'0 12px'}}>
-            <thead><tr style={{color: '#707070',
-    fontWeight: '0',
-    background: '#f2f2f2'}}>
-            <th width="3%" >姓名</th>
-            <th width="20%">问题理由</th>
-            <th width="8%">创建时间</th>
-            <th width="8%">回复</th>
-        </tr></thead>
-        <tbody><tr style={{border: '1px solid #ddd'}} ><td ></td><td ></td><td ></td><td ></td></tr>
-                    </tbody>
-        </table>
-            
             </div>
             
             
