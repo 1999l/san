@@ -109,7 +109,7 @@ export default class Material extends React.Component {
 						<tr>
 								<td>扣丁学堂</td>
 								<td>扣丁学堂大量免费线上视频，不定期更新，为您规划职业路线。<br/>官方网站: 
-                                <a href="http://www.codingke.com">http://www.codingke.com</a> </td>
+                                <a >http://www.codingke.com</a> </td>
 								<td><font color="red">您还未开通扣丁学堂 </font> 
                                 <button >立即开通</button></td>
 															</tr>				

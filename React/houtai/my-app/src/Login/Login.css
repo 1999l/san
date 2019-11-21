@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #6FB3E0;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    color: #393939;
+    line-height: 1.7;
+    position: relative;
+}
+
+.login-box {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 350px;
+    border: 5px solid #393939;
+    background-color: #eee;
+}
+
+.widget-main-box {
+    padding-bottom: 16px;
+}
+
+.header {
+    border-bottom-color: #d5e3ef;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    margin-bottom: 11px;
+}
+
+.block {
+    display: block !important;
+}
+
+.space-6 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    margin: 6px 0 5px;
+}
+
+.header {
+    line-height: 28px;
+    margin-bottom: 16px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #CCC;
+}
+
+.blue {
+    color: #478fca !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.input-icon {
+    position: relative;
+}
+
+.form-control {
+    display: block;
+    width: 268px;
+    height: 24px;
+    padding-left: 6px;
+}
+
+.block {
+    display: block !important;
+}
+
+input[type="password"],
+input[type="text"] {
+    border-radius: 0 !important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    padding: 5px 4px;
+    line-height: 1.2;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.space {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    background-color: #d5e3ef;
+}
+
+.btn-primary,
+.btn-primary:focus {
+    background-color: #428bca !important;
+    border-color: #428bca;
+}
+
+.btn-sm {
+    border-width: 4px;
+    font-size: 13px;
+    padding: 4px 9px;
+    line-height: 1.39;
+}
+
+.btn {
+    display: inline-block;
+    color: #FFF !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+    background-image: none !important;
+    border: 5px solid #FFF;
+    border-radius: 0;
+    box-shadow: none !important;
+    -webkit-transition: all ease .15s;
+    transition: all ease .15s;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    position: relative;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+
+.login-box .toolbar {
+    background: #5090c1;
+    border-top: 2px solid #597597;
+    width: 100%;
+    display: inline-block;
+    padding: 9px 0 11px;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    clear: both;
+}
