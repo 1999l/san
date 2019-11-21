@@ -52,16 +52,16 @@ const { SubMenu } = Menu;
                 </span>
               }
             >
-              <Menu.Item key="1"><Link to="/Complaint">匿名投诉</Link></Menu.Item>
-              <Menu.Item key="2"><Link to="/Technology">技术问题</Link></Menu.Item>
-              <Menu.Item key="3"><Link to="/Upload">项目上传</Link></Menu.Item>
-              <Menu.Item key="4"><Link to="/Vip">VIP</Link></Menu.Item>
-              <Menu.Item key="5"><Link to="/Weekly">学员周报</Link></Menu.Item>
-              <Menu.Item key="6"><Link to="/Material">我的资料</Link></Menu.Item>
-              <Menu.Item key="7"><Link to="/Vip">缴费明细</Link></Menu.Item>
-              <Menu.Item key="8"><Link to="/Vip">参加考试</Link></Menu.Item>
-              <Menu.Item key="9"><Link to="/Vip">学员评价</Link></Menu.Item>
-              <Menu.Item key="10"><Link to="/Vip">教学测评</Link></Menu.Item>
+              <Menu.Item key="1"><Link to="/home/Complaint">匿名投诉</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/home/Technology">技术问题</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/home/Upload">项目上传</Link></Menu.Item>
+              <Menu.Item key="4"><Link to="/home/Vip">VIP</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/home/Weekly">学员周报</Link></Menu.Item>
+              <Menu.Item key="6"><Link to="/home/Material">我的资料</Link></Menu.Item>
+              <Menu.Item key="7"><Link to="/home/Vip">缴费明细</Link></Menu.Item>
+              <Menu.Item key="8"><Link to="/home/Vip">参加考试</Link></Menu.Item>
+              <Menu.Item key="9"><Link to="/home/Vip">学员评价</Link></Menu.Item>
+              <Menu.Item key="10"><Link to="/home/Vip">教学测评</Link></Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub2"
@@ -73,40 +73,40 @@ const { SubMenu } = Menu;
               }
             >
               <Menu.Item key="11">学员请假</Menu.Item>
-              <Menu.Item key="12"><Link to="/Breach">学员违纪</Link></Menu.Item>
+              <Menu.Item key="12"><Link to="/home/Breach">学员违纪</Link></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
         <Layout>
           <Switch>
-            <Route path="/Complaint" >
+            <Route path="/home/Complaint" >
               <Complaint />
             </Route>
-            <Route path="/Technology">
+            <Route path="/home/Technology">
               <Technology />
             </Route>
-            <Route path="/Upload">
+            <Route path="/home/Upload">
               <Upload />
             </Route>
-            <Route path="/Vip">
+            <Route path="/home/Vip">
               <Vip />
             </Route>
-            <Route path="/Weekly">
+            <Route path="/home/Weekly">
               <Weekly />
             </Route>
-            <Route path="/Material">
+            <Route path="/home/Material">
               <Material />
             </Route>
             
 
-            <Route path="/Breach">
+            <Route path="/home/Breach">
               <Breach />
             </Route>
           </Switch>
           </Layout>
       </Layout>
      
-    <Redirect to="/Material" />
+    <Redirect to="/home/Material" />
     </Router>
     );
   }

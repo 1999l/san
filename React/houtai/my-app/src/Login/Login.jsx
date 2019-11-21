@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css'
 import { Button } from 'antd';
-import stores from '../../stores/index.js'
+import stores from '../stores/index.js'
 import axios from 'axios'
 import qs from "qs";
 import Cookies from "js-cookie";
@@ -46,7 +46,7 @@ export default class Complaint extends React.Component {
                             username: name
                         })
                         console.log(stores.getState())
-                        window.location.href = "http://localhost:3000/#/mine/index"
+                        window.location.href = "http://localhost:3000/home/Material"
                     } else {
                         alert('密码或账号错误');
                     }
@@ -110,8 +110,8 @@ export default class Complaint extends React.Component {
                                 <div className="space-4"></div>
                             </fieldset>
                         </form>
-                        <div className="social-or-login center"><span className="bigger-110"
-                            style={{ color: '#428bca' }}>New Student System 体验全新学员系统</span></div>
+                        <div className="social-or-login center">
+                            <a className="bigger-110">New Student System 体验全新学员系统</a></div>
                     </div>
                     <div className="toolbar clearfix">
                         <div style={{ textAlign: 'center', color: 'white' }}>
