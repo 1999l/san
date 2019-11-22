@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default class Weekly extends React.Component {
+    tui(){
+        window.sessionStorage.removeItem('data');
+        window.location.href = "http://localhost:3000/#/"
+
+    }
     render() {
         return (
 
@@ -18,7 +23,8 @@ position: 'relative'}}>
         lineHeight:'7vh',
         color: '#fff'
     
-}}><span>刘依依</span>&nbsp;&nbsp;&nbsp;<span>退出</span></p></div>
+}}><span>{JSON.parse(window.sessionStorage.getItem('data')).username}</span>&nbsp;&nbsp;&nbsp;
+<span onClick={this.tui.bind(this)} style={{ cursor: 'pointer' }}>退出</span></p></div>
         )
     }
 }

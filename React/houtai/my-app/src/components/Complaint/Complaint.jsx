@@ -1,7 +1,33 @@
 import React from 'react';
-// import { Input, Button } from 'antd';
-// const { TextArea } = Input;
+import axios from 'axios'
+import qs from "qs";
+import { getCurrentDate } from '../getCurrentDate'
 export default class Complaint extends React.Component {
+    state = {
+        textvalue: '',
+       
+    }
+    
+    getValue(event) {
+        this.setState({
+            textvalue: event.target.value
+        })
+    }
+
+    tou(){
+        let param = {
+            username: JSON.parse(window.sessionStorage.getItem('data')).username,
+            textvalue: this.state.textvalue,
+            getData: getCurrentDate()
+        };
+        param = qs.stringify(param);
+        if (this.state.textvalue.trim()) {
+            axios.post("http://localhost:2000/complaint", param)
+                .then(({ data }) => {
+                   
+                })
+        }
+    }
     render() {
         return (
             <div style={{height:'100%',
@@ -32,7 +58,9 @@ export default class Complaint extends React.Component {
                 height: '290px', 
                 margin: '0px' ,
                 verticalAlign: 'top'
-                }} ></textarea>
+                }}
+                value={this.state.textvalue}
+                onChange={this.getValue.bind(this)} ></textarea>
                 <div style={{paddingTop:'15px',marginBottom:'15px'}}>
                     <div style={{marginLeft:'30%',
                 marginTop:'50px'}}>
@@ -42,7 +70,7 @@ export default class Complaint extends React.Component {
                         padding:'6px 12px',
                         color:'#fff',
                         border:'5px solid #6fb3e0'
-                    }}>添加</button>
+                    }} onClick={this.xff.tou(this)} >添加</button>
                     <button style={{
                         backgroundColor:'#abbac3',
                         fontSize:'14px',

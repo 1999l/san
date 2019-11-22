@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import { Button } from 'antd';
+import { Button ,notification } from 'antd';
 import axios from 'axios'
 import qs from "qs";
 import Cookies from "js-cookie";
@@ -17,40 +17,60 @@ export default class Complaint extends React.Component {
         }
     }
 
-
     xff() {
-        //方式1、使用axio发送异步ajax请求
-        let param = {
-            num: this.state.num,
-            psw: this.state.psw
-        };
-        param = qs.stringify(param);
-
         let username = Cookies.get("username");
 
         if (username) {
             window.location.href = "http://localhost:3000/#/mine/index"
         } else {
-            axios.post("http://localhost:2000/user", param)
-                .then(({ data }) => {
-                    console.log({ data })
-                    if (data.code === 1) {
-                    window.sessionStorage.setItem('data',JSON.stringify(data.data))
-                      
-                        window.location.href = "http://localhost:3000/home/Material"
-                    } else {
-                        alert('密码或账号错误');
-                    }
-                })
-                .catch(error => {
-                    console.log(error.message)
-                })
+            if(this.state.num){
+                if(this.state.psw){
+                    let param = {
+                        num: this.state.num,
+                        psw: this.state.psw
+                    };
+                    param = qs.stringify(param);
+                    axios.post("http://localhost:2000/user", param)
+                    .then(({ data }) => {
+                        console.log({ data })
+                        if (data.code === 1) {
+                        window.sessionStorage.setItem('data',JSON.stringify(data.data))
+                          
+                            window.location.href = "http://localhost:3000/home/Material"
+                        } else {
+                            notification.open({
+                                message: '错误提示',
+                                description:
+                                  '账号或密码错误',
+                                  duration:1
+                              });
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error.message)
+                    })
+                }else{
+                    notification.open({
+                        message: '错误提示',
+                        description:
+                          '请输入密码',
+                          duration:1
+                      });
+                }
+            }else{
+                notification.open({
+                    message: '错误提示',
+                    description:
+                      '请输入账号',
+                      duration:1
+                  });
+            }
+           
         }
-
     }
-    componentDidMount() {
-        console.log()
-    }
+    // componentDidMount() {
+    //     console.log()
+    // }
     getValue(event) {
         this.setState({
             num: event.target.value

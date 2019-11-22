@@ -30,7 +30,7 @@ export default class Upload extends React.Component {
                                     <div style={{float:'left',display:'inline-block'}}>
                                         <input type="file" name="itemupload" id="file" style={{fontSize: '13px'}} />
                                     </div>
-                                    <span style={{color:'red',fontSize: '13px'}}><b>注：请上传格式为【zip,rar】的压缩包,上传大小不得超过10M！</b></span>
+                                    <span ><b style={{color:'red',fontSize: '13px'}}>注：请上传格式为【zip,rar】的压缩包,上传大小不得超过10M！</b></span>
                                                                     </div>
 
                             </div>

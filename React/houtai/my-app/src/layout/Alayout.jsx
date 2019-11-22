@@ -16,6 +16,7 @@ import Weekly from "../components/Weekly/Weekly"
 import Breach from "../components/Breach/Breach"
 import Material from "../components/Material/Material"
 import Header from "../components/Header/Header"
+import Exam from "../components/Exam/Exam"
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -55,7 +56,7 @@ const { SubMenu } = Menu;
               <Menu.Item key="5"><Link to="/home/Weekly">学员周报</Link></Menu.Item>
               <Menu.Item key="6"><Link to="/home/Material">我的资料</Link></Menu.Item>
               <Menu.Item key="7"><Link to="/home/Vip">缴费明细</Link></Menu.Item>
-              <Menu.Item key="8"><Link to="/home/Vip">参加考试</Link></Menu.Item>
+              <Menu.Item key="8"><Link to="/home/Exam">参加考试</Link></Menu.Item>
               <Menu.Item key="9"><Link to="/home/Vip">学员评价</Link></Menu.Item>
               <Menu.Item key="10"><Link to="/home/Vip">教学测评</Link></Menu.Item>
             </SubMenu>
@@ -92,6 +93,9 @@ const { SubMenu } = Menu;
             </Route>
             <Route path="/home/Material">
               <Material />
+            </Route>
+            <Route path="/home/Exam">
+              <Exam />
             </Route>
             
 

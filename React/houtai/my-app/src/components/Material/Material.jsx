@@ -28,7 +28,8 @@ export default class Material extends React.Component {
                        <img src={huaji} alt=""/>
                    </div>
                    <div className="mingzilan">
-                       <i></i>&nbsp;&nbsp;<span>刘依依&nbsp;&nbsp;(女)</span>
+                       <i></i>&nbsp;&nbsp;<span>{JSON.parse(window.sessionStorage.getItem('data')).username}&nbsp;&nbsp;
+                       ({JSON.parse(window.sessionStorage.getItem('data')).gender})</span>
                    </div>
                </div>
                <div className="right">
@@ -48,31 +49,31 @@ export default class Material extends React.Component {
                        </tr>
                        <tr>
                            <td>学号</td>
-                            <td>GZ190913007</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).xuehao}</td>
                        </tr>
                        <tr>
                            <td>毕业学院</td>
-                            <td>广西民族师范学院 通信工程</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).school}</td>
                        </tr>
                        <tr>
                            <td>在校状态</td>
-                            <td>大四</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).zhuangtai}</td>
                        </tr>
                        <tr>
                            <td>学历</td>
-                            <td>本科</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).xueli}</td>
                        </tr>
                        <tr>
                            <td>千峰班级</td>
-                            <td>广州HTMl就业班1909期</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).banji}</td>
                        </tr>
                        <tr>
                            <td>招生老师</td>
-                            <td>冯艳艳</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).laoshi}</td>
                        </tr>
                        <tr>
                            <td>报名日期</td>
-                            <td>2019-03-21</td>
+                            <td>{JSON.parse(window.sessionStorage.getItem('data')).riqi}</td>
                        </tr>
                        </tbody>
                    </table>
