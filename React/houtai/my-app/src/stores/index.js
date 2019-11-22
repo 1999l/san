@@ -7,7 +7,7 @@ const counter = (state = {
     name: 'liu'
 }, action) => {
     switch (action.type) {
-        case 'COOKINAME':
+        case 'CUNNAME':
             return {
                 ...state,
                 username: action.username

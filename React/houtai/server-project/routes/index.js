@@ -63,16 +63,16 @@ router.post('/details', async function (req, res, next) {
 //登录
 router.post('/user', async function (req, res, next) {
   res.append('Access-Control-Allow-Origin', '*')
-  let { username, psw } = req.body;
+  let { num, psw } = req.body;
   let data;
-  console.log(username, psw)
+  console.log(num, psw)
   try {
-    data = await find('user', { username, psw });
+    data = await find('user', { num, psw });
     data = data[0]
     console.log(data)
-    let authorization = token.create(username);
+    let authorization = token.create(num);
     if (data) {
-      res.send(formatData({ data: { nicheng: data.nicheng, username: data.username, authorization } }))
+      res.send(formatData({ data }))
     } else {
       res.send(formatData({ code: 0 }))
     }

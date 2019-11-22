@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
-const dbName = '1909';
+const dbName = 'qian';
 // 连接
 const connect = () => {
     return new Promise((resolve, reject) => {

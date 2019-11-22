@@ -1,0 +1,1 @@
+"use strict";exports.formatData=function(e){var r=0<arguments.length&&void 0!==e?e:{},t=r.code,i=void 0===t?1:t,a=r.data,o=void 0===a?[]:a,c=r.msg,v=void 0===c?"success":c;return 0===i&&(v="fail"),{code:i,data:o,msg:v}};var _require=require("./token"),create=_require.create,verify=_require.verify;exports.token={create:create,verify:verify};

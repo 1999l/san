@@ -15,6 +15,7 @@ import Vip from "../components/Vip/Vip"
 import Weekly from "../components/Weekly/Weekly"
 import Breach from "../components/Breach/Breach"
 import Material from "../components/Material/Material"
+import Header from "../components/Header/Header"
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -32,12 +33,7 @@ const { SubMenu } = Menu;
   render() {
     return (
       <Router>
-            <div style={{height:'7vh',
-            lineHeight:'7vh',
-            backgroundColor:'#001529',
-            fontSize:'4vh',
-            color:'#fff'}}>
-            千峰教育</div>
+           <Header />
       <Layout style={{ minHeight: '92vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />

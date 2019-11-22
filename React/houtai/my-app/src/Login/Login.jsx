@@ -1,7 +1,6 @@
 import React from 'react'
 import './Login.css'
 import { Button } from 'antd';
-import stores from '../stores/index.js'
 import axios from 'axios'
 import qs from "qs";
 import Cookies from "js-cookie";
@@ -11,7 +10,6 @@ export default class Complaint extends React.Component {
     constructor(props) {
         super(props)
         this.props = props
-        console.log(stores.getState())
         this.state = {
             num: '',
             psw: '',
@@ -37,15 +35,8 @@ export default class Complaint extends React.Component {
                 .then(({ data }) => {
                     console.log({ data })
                     if (data.code === 1) {
-                        let usernames = data.data.username
-                        Cookies.set("username", usernames)
-                        window.sessionStorage.setItem('username', JSON.stringify(usernames))
-                        let name = Cookies.get("username");
-                        stores.dispatch({
-                            type: 'COOKINAME',
-                            username: name
-                        })
-                        console.log(stores.getState())
+                    window.sessionStorage.setItem('data',JSON.stringify(data.data))
+                      
                         window.location.href = "http://localhost:3000/home/Material"
                     } else {
                         alert('密码或账号错误');
@@ -61,19 +52,11 @@ export default class Complaint extends React.Component {
         console.log()
     }
     getValue(event) {
-        stores.dispatch({
-            type: 'COOKINAME',
-            num: event.target.value
-        })
         this.setState({
             num: event.target.value
         })
     }
     getValue1(event) {
-        stores.dispatch({
-            type: 'COOKINAME',
-            psw: event.target.value
-        })
         this.setState({
             psw: event.target.value
         })

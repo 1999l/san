@@ -21,7 +21,7 @@ var counter = function counter() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case 'COOKINAME':
+    case 'CUNNAME':
       return _objectSpread({}, state, {
         username: action.username
       });
