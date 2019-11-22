@@ -36,7 +36,7 @@ export default class Complaint extends React.Component {
                         if (data.code === 1) {
                         window.sessionStorage.setItem('data',JSON.stringify(data.data))
                           
-                            window.location.href = "http://localhost:3000/home/Material"
+                            window.location.href = "http://localhost:3000/home/Complaint"
                         } else {
                             notification.open({
                                 message: '错误提示',

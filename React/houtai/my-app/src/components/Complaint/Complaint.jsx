@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios'
+import { notification } from 'antd';
+
 import qs from "qs";
 import { getCurrentDate } from '../getCurrentDate'
 export default class Complaint extends React.Component {
@@ -24,8 +26,17 @@ export default class Complaint extends React.Component {
         if (this.state.textvalue.trim()) {
             axios.post("http://localhost:2000/complaint", param)
                 .then(({ data }) => {
-                   
+                    this.setState({
+                        textvalue: ''
+                    })
+                    notification.open({
+                        message: '提示',
+                        description:
+                          '投诉成功',
+                          duration:2
+                      });
                 })
+              
         }
     }
     render() {
@@ -70,7 +81,7 @@ export default class Complaint extends React.Component {
                         padding:'6px 12px',
                         color:'#fff',
                         border:'5px solid #6fb3e0'
-                    }} onClick={this.xff.tou(this)} >添加</button>
+                    }} onClick={this.tou.bind(this)} >添加</button>
                     <button style={{
                         backgroundColor:'#abbac3',
                         fontSize:'14px',

@@ -1,7 +1,91 @@
 import React from 'react';
 import './Technology.css'
+import axios from 'axios'
+import qs from "qs";
+import { getCurrentDate } from '../getCurrentDate'
 
 export default class Technology extends React.Component {
+    state = {
+        textvalue: '',
+        dss: window.sessionStorage.getItem('wenti')
+    }
+    constructor(props) {
+        super(props)
+        let param = {
+            username: JSON.parse(window.sessionStorage.getItem('data')).username
+        }
+        param = qs.stringify(param);
+        axios.post("http://localhost:2000/technologyfind", param)
+            .then(({ data }) => {
+                console.log(data);
+                if (data) {
+                    let str1 = '';
+                    for (let a = 0; a < data.length; a++) {
+                        str1 += `<tr >
+                        <th >${data[a].username}</th>
+                        <th >${data[a].getData}</th>
+                        <th >${data[a].textvalue}</th>
+                        <th >${data[a].huida}</th>
+                                </tr>`
+                    }
+                    this.state.dss = str1
+                    window.sessionStorage.setItem('wenti', str1)
+                }
+
+            });
+    }
+
+    getValue(event) {
+        this.setState({
+            textvalue: event.target.value
+        })
+    }
+
+    addItem() {
+        let param = {
+            username: JSON.parse(window.sessionStorage.getItem('data')).username,
+            textvalue: this.state.textvalue,
+            getData: getCurrentDate(),
+            huida:''
+        };
+        param = qs.stringify(param);
+        if (this.state.textvalue.trim()) {
+            axios.post("http://localhost:2000/technology", param)
+                .then(({ data }) => {
+                    console.log(data);
+                    let param = {
+                        username: JSON.parse(window.sessionStorage.getItem('data')).username
+                    }
+
+                    param = qs.stringify(param);
+                    axios.post("http://localhost:2000/technologyfind", param)
+                        .then(({ data }) => {
+                            console.log(data);
+                            if (data) {
+                                let str1 = '';
+                                for (let a = 0; a < data.length; a++) {
+                                    str1 += `<tr >
+                                               <th >${data[a].username}</th>
+                                               <th >${data[a].getData}</th>
+                                               <th >${data[a].textvalue}</th>
+                                               <th >${data[a].huida}</th>
+                                            </tr>`
+                                }
+                                window.sessionStorage.setItem('wenti', str1)
+                                this.setState({
+                                    textvalue: '',
+                                    dss: window.sessionStorage.getItem('wenti')
+
+                                })
+                            }
+
+                        });
+                })
+        }
+    }
+
+
+
     render() {
         return (
             
@@ -28,7 +112,7 @@ export default class Technology extends React.Component {
                             textAlign:'right',
                             verticalAlign: 'top',}}>
                             学员姓名：</span>
-           <input type="text" value='xff' readOnly={true} style={{border:'1px solid #939192',
+           <input type="text" value={JSON.parse(window.sessionStorage.getItem('data')).username} readOnly={true} style={{border:'1px solid #939192',
            backgroundColor:' #f5f5f5',
            paddingLeft:'5px' }} />
            <div style={{height:'15px'}}></div>
@@ -53,7 +137,8 @@ export default class Technology extends React.Component {
                         padding:'6px 12px',
                         color:'#fff',
                         border:'5px solid #6fb3e0'
-                    }}>提问</button>
+                    }}
+                    onClick={this.addItem.bind(this)}>提问</button>
                     <button style={{
                         backgroundColor:'#abbac3',
                         fontSize:'14px',
@@ -75,8 +160,7 @@ export default class Technology extends React.Component {
             <th width="8%">创建时间</th>
             <th width="8%">回复</th>
         </tr></thead>
-        <tbody><tr style={{border: '1px solid #ddd'}} ><td ></td><td ></td><td ></td><td ></td></tr>
-                    </tbody>
+        <tbody  dangerouslySetInnerHTML={{ __html: this.state.dss }} />
         </table>
             
             </div>

@@ -234,9 +234,9 @@ router.post('/user', function _callee8(req, res, next) {
       }
     }
   }, null, null, [[3, 13]]);
-}); //验用户的手机号是否已经注册
+}); //技术问题渲染
 
-router.post('/yan', function _callee9(req, res, next) {
+router.post('/technologyfind', function _callee9(req, res, next) {
   var username;
   return regeneratorRuntime.async(function _callee9$(_context9) {
     while (1) {
@@ -247,7 +247,7 @@ router.post('/yan', function _callee9(req, res, next) {
           console.log(username);
           _context9.prev = 3;
           _context9.next = 6;
-          return regeneratorRuntime.awrap(find('user', {
+          return regeneratorRuntime.awrap(find('wenti', {
             username: username
           }));
 
@@ -268,24 +268,25 @@ router.post('/yan', function _callee9(req, res, next) {
       }
     }
   }, null, null, [[3, 11]]);
-}); //注册
+}); //技术问题添加
 
-router.post('/reg', function _callee10(req, res) {
-  var _req$body2, username, psw, nicheng;
+router.post('/technology', function _callee10(req, res) {
+  var _req$body2, username, textvalue, getData, huida;
 
   return regeneratorRuntime.async(function _callee10$(_context10) {
     while (1) {
       switch (_context10.prev = _context10.next) {
         case 0:
           res.append('Access-Control-Allow-Origin', '*');
-          _req$body2 = req.body, username = _req$body2.username, psw = _req$body2.psw, nicheng = _req$body2.nicheng;
-          console.log(username, psw, nicheng);
+          _req$body2 = req.body, username = _req$body2.username, textvalue = _req$body2.textvalue, getData = _req$body2.getData, huida = _req$body2.huida;
+          console.log(username, textvalue, getData, huida);
 
           try {
-            insert('user', [{
+            insert('wenti', [{
               username: username,
-              psw: psw,
-              nicheng: nicheng
+              textvalue: textvalue,
+              getData: getData,
+              huida: huida
             }]); //{username,password,age,gender}
 
             res.send(formatData());
@@ -298,6 +299,39 @@ router.post('/reg', function _callee10(req, res) {
         case 4:
         case "end":
           return _context10.stop();
+      }
+    }
+  });
+}); //匿名投诉
+
+router.post('/complaint', function _callee11(req, res) {
+  var _req$body3, username, textvalue, getData;
+
+  return regeneratorRuntime.async(function _callee11$(_context11) {
+    while (1) {
+      switch (_context11.prev = _context11.next) {
+        case 0:
+          res.append('Access-Control-Allow-Origin', '*');
+          _req$body3 = req.body, username = _req$body3.username, textvalue = _req$body3.textvalue, getData = _req$body3.getData;
+          console.log(username, textvalue, getData);
+
+          try {
+            insert('tousu', [{
+              username: username,
+              textvalue: textvalue,
+              getData: getData
+            }]); //{username,password,age,gender}
+
+            res.send(formatData());
+          } catch (err) {
+            res.send(formatData({
+              code: 0
+            }));
+          }
+
+        case 4:
+        case "end":
+          return _context11.stop();
       }
     }
   });

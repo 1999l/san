@@ -106,7 +106,7 @@ const { SubMenu } = Menu;
           </Layout>
       </Layout>
      
-    <Redirect to="/home/Material" />
+    <Redirect to="/home/Complaint" />
     </Router>
     );
   }

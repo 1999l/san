@@ -28,7 +28,7 @@ export default class Weekly extends React.Component {
                             textAlign:'right',
                             verticalAlign: 'top',}}>
                             学员姓名：</span>
-           <input type="text" value='xff' readOnly={true} style={{border:'1px solid #939192',
+           <input type="text" value={JSON.parse(window.sessionStorage.getItem('data')).username} readOnly={true} style={{border:'1px solid #939192',
            backgroundColor:' #f5f5f5',
            paddingLeft:'5px' }} />
             <div style={{height:'15px'}}></div>

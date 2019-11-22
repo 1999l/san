@@ -82,14 +82,14 @@ router.post('/user', async function (req, res, next) {
   }
 });
 
-//验用户的手机号是否已经注册
-router.post('/yan', async function (req, res, next) {
+//技术问题渲染
+router.post('/technologyfind', async function (req, res, next) {
   res.append('Access-Control-Allow-Origin', '*')
   let { username } = req.body;
 
   console.log(username)
   try {
-    data = await find('user', { username });
+    data = await find('wenti', { username });
 
     console.log(data)
     res.send(data)
@@ -99,16 +99,31 @@ router.post('/yan', async function (req, res, next) {
   }
 });
 
-
-
-//注册
-router.post('/reg', async (req, res) => {
+//技术问题添加
+router.post('/technology', async (req, res) => {
   res.append('Access-Control-Allow-Origin', '*')
 
-  let { username, psw, nicheng } = req.body;
-  console.log(username, psw, nicheng)
+  let { username, textvalue, getData,huida } = req.body;
+  console.log(username, textvalue, getData,huida)
   try {
-    insert('user', [{ username, psw, nicheng }]);//{username,password,age,gender}
+    insert('wenti', [{ username, textvalue, getData ,huida}]);//{username,password,age,gender}
+
+    res.send(formatData())
+  } catch (err) {
+
+    res.send(formatData({ code: 0 }))
+  }
+})
+
+
+//匿名投诉
+router.post('/complaint', async (req, res) => {
+  res.append('Access-Control-Allow-Origin', '*')
+
+  let { username, textvalue, getData } = req.body;
+  console.log(username, textvalue, getData)
+  try {
+    insert('tousu', [{ username, textvalue, getData }]);//{username,password,age,gender}
 
     res.send(formatData())
   } catch (err) {
